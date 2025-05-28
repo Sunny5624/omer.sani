@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume - MD. OMER AS SANI</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 12px; /* Increased font size for better readability */
+      margin: 20px auto;
+      padding: 0;
+      max-width: 800px; /* Slightly wider */
+      line-height: 1.4;
+      color: #000;
+    }
+    h1 {
+      font-size: 22px; /* bigger heading */
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .contact-info {
+      font-size: 11px; /* slightly bigger contact info */
+      margin-bottom: 20px;
+    }
+    .section-title {
+      font-size: 14px;
+      font-weight: bold;
+      text-decoration: underline;
+      margin-top: 24px;
+      margin-bottom: 8px;
+    }
+    .download-button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 8px 16px;
+      font-size: 12px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      cursor: pointer;
+      border: none;
+    }
+    ul {
+      margin-top: 8px;
+      padding-left: 20px;
+    }
+    p, li {
+      margin: 4px 0;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+  <div id="resume-content">
+    <h1>MD. OMER AS SANI</h1>
+    <div class="contact-info">
+      📍 Bangladesh | 📧 omursunny1@gmail.com | 📞 +8801856244025<br />
+      📨 Telegram: @OMUR_WEEX | LinkedIn: md-omer-as-sani
+    </div>
+
+    <div class="section-title">🔹 Professional Summary</div>
+    <p>
+      Results-driven and highly adaptable crypto industry professional with 4+ years of experience in business development, token listings, P2P trading operations, and community management across top-tier centralized exchanges. Skilled in onboarding Web3 projects, managing token lifecycle operations, and developing growth strategies tailored for global and regional markets. Deep knowledge of crypto ecosystems and user behavior in South Asia, with strong communication skills and a proven record of forging long-term partnerships and driving platform adoption.
+    </p>
+
+    <div class="section-title">🔹 Core Competencies</div>
+    <ul>
+      <li>Centralized Exchange (CEX) Token Listing Operations</li>
+      <li>Strategic Business Development & Partnerships</li>
+      <li>Global & Regional Market Expansion (South Asia) P2P Merchant Onboarding & Dispute Resolution</li>
+      <li>Telegram/Discord Community Growth & Support</li>
+      <li>Client & Project Relationship Management</li>
+      <li>KOL & Influencer Networking</li>
+      <li>Web3 Fundraising & VC Introduction</li>
+      <li>Project Evaluation & Go-to-Market Strategy</li>
+    </ul>
+
+    <div class="section-title">🔹 Professional Experience</div>
+
+    <div class="section-title">🔹 TimeFarm – Telegram Mini App Airdrop Campaign</div>
+    <p>
+      Manage and grow the Bangladeshi community for TimeFarm’s Telegram Mini App Airdrop, ensuring active participation. Provide real-time support, resolve user inquiries, and share updates on airdrops, rewards, and platform features.
+    </p>
+
+    <div class="section-title">🔹 Business Development Manager</div>
+    <p>
+      Drive coin listings and strategic partnerships, expand market presence, and enhance platform performance through effective token operations and relationship management.
+    </p>
+
+    <div class="section-title">🔹 Collab P2P Merchant & Community Admin</div>
+    <p>
+      Handle real-time customer inquiries and disputes related to P2P trading. Maintain user satisfaction and optimize workflows for better performance.
+    </p>
+
+    <div class="section-title">🔹 Community Ranger</div>
+    <p>
+      Engage with community members to promote blockchain awareness. Provide user support and moderate discussions to ensure a positive community environment.
+    </p>
+
+    <div class="section-title">🔹 Listing Manager & Official Exchange Partner</div>
+    <p>
+      Represent exchanges and onboard new projects. Offer listing consultancy, build relationships, and deliver high-value listings.
+    </p>
+
+    <div class="section-title">🔹 Languages</div>
+    <p>English, Hindi, Bangla</p>
+
+    <div class="section-title">🔹 Education</div>
+    <p>Diploma in Mechanical Engineering<br>
+    ⦁ Barisal Polytechnic Institute, Bangladesh<br>
+    📅 Graduated: 2022</p>
+  </div>
+
+  <button class="download-button" onclick="downloadPDF()">📄 Download PDF</button>
+
+  <script>
+    function downloadPDF() {
+      const element = document.getElementById("resume-content");
+      const opt = {
+        margin:       0.3,  // Slightly bigger margin for layout gap
+        filename:     'resume-md-omer-as-sani.pdf',
+        image:        { type: 'jpeg', quality: 1 },
+        html2canvas:  { scale: 2, useCORS: true },
+        jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' },
+        pagebreak:    { mode: ['css', 'legacy'] }
+      };
+      html2pdf().set(opt).from(element).save();
+    }
+  </script>
+</body>
+</html>
