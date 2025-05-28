@@ -2,38 +2,52 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Resume - MD. OMER AS SANI</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      font-size: 12px; /* Increased font size for better readability */
-      margin: 20px auto;
+    html, body {
+      margin: 0;
       padding: 0;
-      max-width: 800px; /* Slightly wider */
+      background: #fff;
+      -webkit-print-color-adjust: exact;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
       line-height: 1.4;
       color: #000;
     }
+    body {
+      max-width: 780px;
+      margin: 20px auto;
+      padding: 10px 20px;
+      box-sizing: border-box;
+    }
     h1 {
-      font-size: 22px; /* bigger heading */
+      font-size: 18px;
       font-weight: bold;
-      margin-bottom: 8px;
+      margin-bottom: 5px;
     }
     .contact-info {
-      font-size: 11px; /* slightly bigger contact info */
-      margin-bottom: 20px;
+      font-size: 10px;
+      margin-bottom: 15px;
     }
     .section-title {
-      font-size: 14px;
+      font-size: 12px;
       font-weight: bold;
       text-decoration: underline;
-      margin-top: 24px;
-      margin-bottom: 8px;
+      margin-top: 16px;
+      margin-bottom: 4px;
+    }
+    ul {
+      margin-top: 4px;
+      padding-left: 16px;
+    }
+    p, li {
+      margin: 2px 0;
     }
     .download-button {
       display: inline-block;
-      margin-top: 30px;
-      padding: 8px 16px;
+      margin-top: 20px;
+      padding: 6px 14px;
       font-size: 12px;
       background-color: #007bff;
       color: white;
@@ -42,12 +56,10 @@
       cursor: pointer;
       border: none;
     }
-    ul {
-      margin-top: 8px;
-      padding-left: 20px;
-    }
-    p, li {
-      margin: 4px 0;
+    @media print {
+      .download-button {
+        display: none;
+      }
     }
   </style>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
@@ -69,7 +81,7 @@
     <ul>
       <li>Centralized Exchange (CEX) Token Listing Operations</li>
       <li>Strategic Business Development & Partnerships</li>
-      <li>Global & Regional Market Expansion (South Asia) P2P Merchant Onboarding & Dispute Resolution</li>
+      <li>Global & Regional Market Expansion (South Asia)P2P Merchant Onboarding & Dispute Resolution</li>
       <li>Telegram/Discord Community Growth & Support</li>
       <li>Client & Project Relationship Management</li>
       <li>KOL & Influencer Networking</li>
@@ -118,14 +130,16 @@
   <script>
     function downloadPDF() {
       const element = document.getElementById("resume-content");
+
       const opt = {
-        margin:       0.3,  // Slightly bigger margin for layout gap
+        margin:       [0.3, 0.3, 0.3, 0.3], // top, left, bottom, right (inches)
         filename:     'resume-md-omer-as-sani.pdf',
-        image:        { type: 'jpeg', quality: 1 },
-        html2canvas:  { scale: 2, useCORS: true },
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2, useCORS: true, logging: false, dpi: 300, letterRendering: true },
         jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' },
-        pagebreak:    { mode: ['css', 'legacy'] }
+        pagebreak:    { mode: ['avoid-all', 'css', 'legacy'] }
       };
+
       html2pdf().set(opt).from(element).save();
     }
   </script>
